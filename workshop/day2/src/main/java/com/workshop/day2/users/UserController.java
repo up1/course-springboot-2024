@@ -1,9 +1,6 @@
 package com.workshop.day2.users;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +20,33 @@ public class UserController {
     public UserResponse getUserById(@PathVariable int id) {
         UserResponse userResponse = new UserResponse(id, "Demo", 40);
         return userResponse;
+    }
+
+    @PostMapping("/users")
+    public UserResponse createNewUser(@RequestBody UserRequest newUser) {
+        UserResponse newUserResponse = new UserResponse(
+                1,
+                newUser.getName(),
+                newUser.getAge());
+        return newUserResponse;
+    }
+
+    @PutMapping("/users/{id}")
+    public UserResponse updateUser(@RequestBody UserRequest newUser, @PathVariable int id) {
+        // TODO
+        // 1. find by id
+        // 2. found => update user
+        // 3. not found => ?? (create ? or throw error)
+        UserResponse updatedUserResponse = new UserResponse(
+                id,
+                newUser.getName(),
+                newUser.getAge());
+        return updatedUserResponse;
+    }
+
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable int id) {
+        // TODO
     }
 
 }
