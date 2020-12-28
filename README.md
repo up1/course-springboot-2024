@@ -4,4 +4,4 @@
 * Spring Testing
 
 ### List of workshops
-* [Workshop day 1](https://github.com/up1/workshop-spring-20201228)
+* [Workshop day 1](https://github.com/up1/course-springboot-2020/tree/main/workshop)
