@@ -1,4 +1,5 @@
-workshop/
+*.zip
+.DS_Store
 example/
 *.key
 demo-spring-testing/
