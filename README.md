@@ -5,3 +5,4 @@
 
 ### List of workshops
 * [Workshop day 1](https://github.com/up1/course-springboot-2020/tree/main/workshop)
+* [Workshop REST API](https://github.com/up1/course-springboot-2020/wiki/Workshop-REST-API)
