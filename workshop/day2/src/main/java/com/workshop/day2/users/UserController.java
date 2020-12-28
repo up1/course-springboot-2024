@@ -29,7 +29,7 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public UserResponse getUserById(@PathVariable int id) {
-        User user = userRepository.findById(id).orElseThrow(() -> new UserPrincipalNotFoundException(id))
+        User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
         UserResponse userResponse = new UserResponse(user.getId(),
                 user.getName(), user.getAge());
         return userResponse;
