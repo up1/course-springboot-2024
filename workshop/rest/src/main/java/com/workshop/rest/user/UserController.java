@@ -12,12 +12,14 @@ import java.util.List;
 public class UserController {
 
     @GetMapping("/user") //user?page=1
-    public List<UserResponse> getAllUser(
+    public UserListResponse getAllUser(
             @RequestParam(defaultValue = "1") int page) {
-        List<UserResponse> userResponseList = new ArrayList<>();
-        userResponseList.add(new UserResponse(1, "demo 1", 30));
-        userResponseList.add(new UserResponse(2, "demo 2", 35));
-        return userResponseList;
+
+        UserListResponse x = new UserListResponse(
+                new UserResponse(1, "demo 1", 30),
+                new UserResponse(2, "demo 2", 35)
+        );
+        return x;
     }
 
     @GetMapping("/user/{id}")

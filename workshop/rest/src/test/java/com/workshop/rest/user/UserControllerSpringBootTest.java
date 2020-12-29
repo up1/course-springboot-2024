@@ -21,9 +21,10 @@ public class UserControllerSpringBootTest {
     @DisplayName("ทำการตรวจสอบ การดึงข้อมูล user ทั้งหมด")
     public void getAllUser() {
         // Call API
-        List response = restTemplate.getForObject("/user", List.class);
+        UserListResponse response
+                = restTemplate.getForObject("/user", UserListResponse.class);
         // Assert
-        assertEquals(2, response.size());
+        assertEquals(2, response.getUsers().size());
     }
 
     @Test
