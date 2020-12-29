@@ -14,12 +14,10 @@ public class UserController {
     @GetMapping("/user") //user?page=1
     public UserListResponse getAllUser(
             @RequestParam(defaultValue = "1") int page) {
-
-        UserListResponse x = new UserListResponse(
+        return new UserListResponse(
                 new UserResponse(1, "demo 1", 30),
                 new UserResponse(2, "demo 2", 35)
         );
-        return x;
     }
 
     @GetMapping("/user/{id}")
