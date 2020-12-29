@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class UserController {
 
@@ -30,6 +32,20 @@ public class UserController {
                 new UserResponse(1, "demo 1", 30),
                 new UserResponse(2, "demo 2", 35)
         );
+    }
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @GetMapping("/user2") //user?page=1
+    public UserListResponse getAllUser2(
+            @RequestParam(defaultValue = "1") int page) {
+        List<User> users = userRepository.findAll();
+        UserListResponse userListResponse = new UserListResponse();
+        for (User user : users) {
+            userListResponse.add(new UserResponse());
+        }
+        return userListResponse;
     }
 
 

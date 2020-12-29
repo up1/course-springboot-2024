@@ -15,6 +15,10 @@ public class UserListResponse {
         }
     }
 
+    public void add(UserResponse userResponse) {
+        users.add(userResponse);
+    }
+
     public List<UserResponse> getUsers() {
         return users;
     }
