@@ -15,7 +15,17 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/user/{id}")
-    public ResponseEntity<UserResponse> getUser(@PathVariable int id) {
+    public UserResponse getUser(@PathVariable int id) {
+        // Call service
+        UserModel user = userService.inquiryUserById(id);
+        // Mapping to response
+        UserResponse userResponse
+                = new UserResponse(id, user.getName(), user.getAge());
+        return userResponse;
+    }
+
+    @GetMapping("/user2/{id}")
+    public ResponseEntity<UserResponse> getUser2(@PathVariable int id) {
         // Call service
         try {
             UserModel user = userService.inquiryUserById(id);
