@@ -1,5 +1,7 @@
 package com.workshop.rest.user;
 
+import com.workshop.rest.post.PostGateway;
+import com.workshop.rest.post.PostResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +15,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private PostGateway postGateway;
+
+    @GetMapping("/post/{id}")
+    public PostResponse getPost(@PathVariable int id) {
+        return postGateway.getPostById(id).get();
+    }
+
     @PostMapping("/user")
     public UserResponse createNewUser(@RequestBody NewUserRequest newUserRequest) {
         UserModel newUser = userService.create(
-                        new UserModel(newUserRequest.getName(),
-                                      newUserRequest.getAge()));
+                new UserModel(newUserRequest.getName(),
+                        newUserRequest.getAge()));
         return new UserResponse(
                 newUser.getId(), newUser.getName(), newUser.getAge());
     }
