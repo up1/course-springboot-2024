@@ -15,11 +15,16 @@ public class UserListResponse {
         }
     }
 
+
     public List<UserResponse> getUsers() {
         return users;
     }
 
     public void setUsers(List<UserResponse> users) {
         this.users = users;
+    }
+
+    public void add(UserResponse u) {
+        users.add(u);
     }
 }

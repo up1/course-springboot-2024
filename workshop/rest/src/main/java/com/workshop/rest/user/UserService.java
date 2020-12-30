@@ -2,6 +2,9 @@ package com.workshop.rest.user;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -27,5 +30,12 @@ public class UserService {
         return new UserModel(newUser.getId(),
                 newUser.getName(),
                 newUser.getAge());
+    }
+
+    public List<UserModel> getAll() {
+        List<UserModel> results = new ArrayList<>();
+        List<User> users = userRepository.findAll();
+        users.forEach(u -> results.add(new UserModel(u.getId(),u.getName(), u.getAge())));
+        return results;
     }
 }

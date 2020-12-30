@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class UserController {
 
@@ -47,10 +49,16 @@ public class UserController {
     @GetMapping("/user") //user?page=1
     public UserListResponse getAllUser(
             @RequestParam(defaultValue = "1") int page) {
-        return new UserListResponse(
-                new UserResponse(1, "demo 1", 30),
-                new UserResponse(2, "demo 2", 35)
-        );
+        List<UserModel> userModels = userService.getAll();
+        UserListResponse userListResponse = new UserListResponse();
+        userModels.forEach(u -> userListResponse.add(
+                new UserResponse(u.getId(), u.getName(), u.getAge())));
+
+//        userModels.stream()
+//                .filter(user -> user.getId() % 2 == 0)
+//                .distinct()
+//                .sorted();
+        return userListResponse;
     }
 
 
