@@ -27,19 +27,25 @@ public class UserControllerSpringBootTest {
         assertEquals(2, response.getUsers().size());
     }
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Test
     @DisplayName("ทำการตรวจสอบ การดึงข้อมูล user ด้วย id=1")
     public void getUser() {
+        // Intial data
+        userRepository.save(new User("demo for test", 30));
+
         // Call API
         UserResponse response = restTemplate.getForObject("/user/1", UserResponse.class);
 
         // Assert
         assertEquals(1, response.getId());
-        assertEquals("demo", response.getName());
+        assertEquals("demo for test", response.getName());
         assertEquals(30, response.getAge());
 
         // Quiz => equals() + hashcode()
-        UserResponse expected = new UserResponse(1, "demo", 30);
+        UserResponse expected = new UserResponse(1, "demo for test", 30);
         assertEquals(expected, response);
     }
 
