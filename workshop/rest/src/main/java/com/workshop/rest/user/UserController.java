@@ -3,16 +3,22 @@ package com.workshop.rest.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @PostMapping("/user")
+    public UserResponse createNewUser(@RequestBody NewUserRequest newUserRequest) {
+        UserModel newUser = userService.create(
+                        new UserModel(newUserRequest.getName(),
+                                      newUserRequest.getAge()));
+        return new UserResponse(
+                newUser.getId(), newUser.getName(), newUser.getAge());
+    }
 
     @GetMapping("/user/{id}")
     public UserResponse getUser(@PathVariable int id) {

@@ -6,6 +6,11 @@ public class UserModel {
     private int age;
 
     public UserModel() {
+        this("", 0);
+    }
+
+    public UserModel(String name, int age) {
+        this(0, name, age);
     }
 
     public UserModel(int id, String name, int age) {

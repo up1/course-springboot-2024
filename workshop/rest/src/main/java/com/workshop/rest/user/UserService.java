@@ -1,6 +1,5 @@
 package com.workshop.rest.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,5 +19,13 @@ public class UserService {
         }catch (Exception e) {
             throw new UserNotFoundException(id);
         }
+    }
+
+    public UserModel create(UserModel userModel) {
+        User newUser = new User(userModel.getName(), userModel.getAge());
+        newUser = userRepository.save(newUser);
+        return new UserModel(newUser.getId(),
+                newUser.getName(),
+                newUser.getAge());
     }
 }
