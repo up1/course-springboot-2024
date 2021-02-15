@@ -1,4 +1,4 @@
-# Course Spring Framework and Spring Boot # 2020
+# Course Spring Framework and Spring Boot
 * Spring Framework
 * Spring Boot
 * Spring Testing
