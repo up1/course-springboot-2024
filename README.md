@@ -10,3 +10,4 @@
 ### List of workshops
 * [Workshop Class #1](https://github.com/up1/course-springboot-2020/tree/main/workshop)
 * [Workshop Class #2](https://github.com/up1/workshop-spring-20210215)
+* [Workshop Class #3](https://github.com/up1/workshop-spring-20210222)
