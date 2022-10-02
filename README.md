@@ -36,10 +36,15 @@
   * Test double (Stub, Spy and Mocking)
   * Learn JUnit and Mockito
   * Code coverage with Jacoco
-  * Monitoring with Sprint Boot + Actuator + Micrometer
-  * Working with Prometheus and Grafana
-    * Resource usages
-    * APIs usages
+  * Monitoring with Sprint Boot
+    * Centralized logging
+      * Logback + JSON
+      * ELK stack 
+    * Distributed tracing
+      * Zipkin
+      * Jaeger 
+    * Application metric 
+      * Actuator + Micrometer + Prometheus + Grafana
 
 ## Sample code for RESTFul API with Spring boot workshop
 * [Workshop Bad Code and Refactor](https://github.com/up1/workshop-advance-java-01/tree/main/workshop01)
