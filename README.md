@@ -46,6 +46,7 @@
 * [Workshop REST API](https://github.com/up1/course-springboot-2020/wiki/Workshop-REST-API)
 * [TDD with Spring Boot](https://github.com/up1/course-java-framework-with-springboot)
 * [Spring Boot + Observability](https://github.com/up1/workshop-springboot-observability)
+* [Spring Boot + Docker](https://github.com/up1/course-docker-java-spring-boot)
 
 ### List of workshops
 * [Workshop Class #1](https://github.com/up1/course-springboot-2020/tree/main/workshop)
