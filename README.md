@@ -2,6 +2,7 @@
 * Spring Framework
 * Spring Boot
 * Spring Testing
+* Observability
 
 ## Outline
 * Day 1 :: Fundamental of REST and Spring Boot
