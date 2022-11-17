@@ -52,5 +52,5 @@
 * [TDD with Spring Boot](https://github.com/up1/course-java-framework-with-springboot)
 * [Spring Boot + Docker](https://github.com/up1/course-docker-java-spring-boot)
 * [Spring Boot + Observability](https://github.com/up1/workshop-springboot-observability)
-
+* [RabbitMQ](https://github.com/up1/course-rabbitmq)
 
