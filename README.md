@@ -38,6 +38,7 @@
   * Code coverage with Jacoco
   * Monitoring with Sprint Boot
     * Centralized logging
+      * Working with Spring AOP 
       * Logback + JSON
       * ELK stack 
     * Distributed tracing
