@@ -3,6 +3,7 @@
 * Spring Boot
 * Spring Testing
 * Observability
+* [Miro board](https://miro.com/app/board/uXjVNh6sHs0=/)
 
 ## Outline
 * Day 1 :: Fundamental of REST and Spring Boot
